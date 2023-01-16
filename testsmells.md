@@ -10,25 +10,25 @@
 🎀 <b>Code related </b>
 
 * Code duplication
-  * <b>Test Redundancy:</b> 
-  * <b>Annotation Repetition:</b> 
-  * <b>Unecessary Test:</b> 
+  * <b>Test Redundancy:</b> When there are similar test codes, even if there are few simple duplications.
+  * <b>Annotation Repetition:</b> When there are similar test codes, even if there are few simple duplications.
+  * <b>Unecessary Test:</b> Unit testing should be asserting the behavior of your class's features, when the test case does not fulfill this objective, it becomes dispensable (e.g. check visibility of its constructors and methods).
 * Complex / Hard to understand
-  * <b>Multiple Assertion:</b> 
-  * <b>Verbose Test:</b> 
-  * <b>God Test Class:</b> 
-  * <b>Irrelevant Information:</b> 
-  * <b>Obscure Test:</b> 
-  * <b>The Giant:</b> 
+  * <b>Multiple Assertion:</b> There are two many assertions happening in one method, though indirectly and it defeats the idea of one responsibility per test.
+  * <b>Verbose Test:</b> According to "Clean Code" any test that takes longer than 1/10th of a second is a test that takes too long.
+  * <b>God Test Class:</b> A test class with too many test cases.
+  * <b>Irrelevant Information:</b>  Data, variables, resources, or objects that are not essential for checking the behavior of the output class.
+  * <b>Obscure Test:</b> Inappropriate choice of data structures that make the test difficult to understand.
+  * <b>The Giant:</b> A unit test that, although it is validly testing the object under test, can span thousands of lines and contain many many test cases. The test is so complicated that it starts to contain bugs of its own or flaky behavior.
 * Violating coding best practices
-  * <b>Bad Namin:</b> 
-  * <b>Code Organization:</b> 
-  * <b>Print Statement:</b> 
-  * <b>Anal Probe:</b> 
-  * <b>Magic Number:</b> 
-  * <b>Messy Tests:</b> 
-  * <b>Sensitive Equality:</b> 
-  * <b>The Test With No Name:</b> 
+  * <b>Bad Namin:</b> Test methods and classes should follow the testing framework naming conventions. It allow developers to quickly look at a test name and determine roughly what tests are being done.
+  * <b>Code Organization:</b> All tests should be associated with their respective production classes. Following the naming conventions, the project should have two source folders, one called src the other called test. The source folders should have the exact same package structure and each src Class has a test equivalent with "Test" appended to its name.
+  * <b>Print Statement:</b> Printing from unit tests is not the right thing to do.
+  * <b>Anal Probe:</b> A test which has to use insane, illegal or otherwise unhealthy ways to perform its task like: Reading private fields using Java's setAccessible(true) or extending a class to access protected fields/methods or having to put the test in a certain package to access package global fields/methods.
+  * <b>Magic Number:</b> Test methods containing magic numbers. 
+  * <b>Messy Tests:</b> Test methods that do not follow a coding standart or naming convention
+  * <b>Sensitive Equality:</b> When the same unit test applied to data multiple items that are roughly equivalent (two non-empty strings). For example, this occurs when implement multiple unit test methods, with names like MethodNonEmptyValidString1 and MethodNonEmptyValidString2.
+  * <b>The Test With No Name:</b> The test that gets added to reproduce a specific bug in the bug tracker and whose author thinks does not warrant a name of its own. Instead of enhancing an existing, lacking test, a new test is created with aleatory name (e.g.  testForBUG123).
 
 🥏 <b>Depedencies</b>
 
