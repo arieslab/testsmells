@@ -33,20 +33,20 @@
 🥏 <b>Depedencies</b>
 
 * Dependencies among tests
-  * <b>Coupling Between Test Methods:</b> 
-  * <b>Chain Gang:</b> 
-  * <b>Order Dependent Tests:</b> 
+  * <b>Coupling Between Test Methods:</b> A test that calls another test, it is a smell for some problem in your tests.
+  * <b>Chain Gang:</b> A couple of tests that must run in a certain order, i.e. one test changes the global state of the system (global variables, data in the database) and the next test(s) depends on it. You often see this in database tests. Instead of doing a rollback in teardown(), tests commit their changes to the database. Another common cause is that changes to the global state aren't wrapped in try/finally blocks which clean up should the test fail.
+  * <b>Order Dependent Tests:</b> I run a bunch of tests in parallel and some tests fail. I run them sequentially and they all pass.
 * External dependencies
-  * <b>Mystery Guest:</b> 
-  * <b>Tooling Details in Test Case: </b> 
-  * <b>Hidden Dependency:</b> 
-  * <b>Hardcoded dependency:</b> 
-  * <b>Dependencies on test containers: </b> 
-  * <b>State Leak:</b> 
-  * <b>The Butterfly:</b> 
-  * <b>The Conjoined Twins:</b> 
-  * <b>The Environmental Vandal:</b> 
-  * <b>The Local Hero:</b> 
+  * <b>Mystery Guest:</b> When (unit) testing, is is bad to expect the code to use certain paths or external resources. For example, using a 'real' database makes it hard to setup, take down, and isolate the unit tests.
+  * <b>Tooling Details in Test Case: </b> You should decouple your business logic that's in charge of collecting all email addresses, email subject and body, from that 3rd party library. 
+  * <b>Hidden Dependency:</b>A unit test that requires some existing data to have been populated somewhere before the test runs. If that data wasn’t populated, the test will fail and leave little indication to the developer, forcing them to dig through of code to find out where the data it was using was supposed to come from.
+  * <b>Hardcoded dependency:</b> Objects depend upon other objects. Hard-coded dependencies can be stubbed out during testing, but only during testing. It is not possible to change behaviour or reuse code by providing different dependencies, if they are hard-coded.
+  * <b>Dependencies on test containers: </b> If your test code depends on other components, the test results become less trustworthy - failing tests may be due to the other components, passing tests can be due to the created objects having different properties than intended in the test.
+  * <b>State Leak:</b> When test cases fail differently depending on, for instance, what order they are run.
+  * <b>The Butterfly:</b> You have to test something which contains data that changes all the time, like a structure which contains the current date, and there is no way to nail the result down to a fixed value. The ugly part is that you don't care about this value at all. It just makes your test more complicated without adding any value.
+  * <b>The Conjoined Twins:</b> Tests that people are calling "Unit Tests" but are really integration tests since they are not isolated from dependencies (file configuration, databases, services, other in other words the parts not being tested in your tests that people got lazy and did not isolate) and fail due to dependencies that should have been stubbed or mocked.
+  * <b>The Environmental Vandal:</b> A 'unit' test which for various 'requirements' starts spilling out into its environment, using and setting environment variables / ports. Running two of these tests simultaneously will cause 'unavailable port' exceptions etc.These tests will be intermittent, and leave developers saying things like 'just run it again'.One solution Ive seen is to randomly select a port number to use. This reduces the possibility of a conflict, but clearly doesnt solve the problem.
+  * <b>The Local Hero:</b> A test case that is dependent on something specific to the development environment it was written on in order to run. The result is the test passes on development boxes, but fails when someone attempts to run it elsewhere.
 
 🍊 <b>In association with production code</b>
 
