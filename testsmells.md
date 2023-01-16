@@ -51,17 +51,17 @@
 🍊 <b>In association with production code</b>
 
 * In association with production code
-  * <b>Ugly mirror:</b> 
-  * <b>Test logic in production code:</b> 
-  * <b>Coupling with Production code:</b> 
-  * <b>Hard to co-evolve:</b> 
-  * <b>Obsolete tests:</b> 
-  * <b>Doppelgänger:</b> 
-  * <b>For Testers only:</b> 
-  * <b>Friction:</b> 
-  * <b>Replicating Disadvantages of the Code:</b> 
-  * <b>Second Class Citizens:</b> 
-  * <b>The Forty Foot Pole Test:</b> 
+  * <b>Ugly mirror:</b> Creating complex objects from test code can make the test code complex and maintenance intensive. Re-using other application code to create these objects can simplify the test code, which otherwise would somehow duplicate the code for object creation.
+  * <b>Test logic in production code:</b> Methods tests that include validating the result of other methods.
+  * <b>Coupling with Production code:</b> ................XXXXXX...........XXXXXXX
+  * <b>Hard to co-evolve:</b> When a test method is coupled to other test methods or production code, any modification on its dependencies can broke the test
+  * <b>Obsolete tests:</b> Test case that may have been useful in the past. However, now is no longer used. These test case must be refactored.
+  * <b>Doppelgänger:</b> In order to test something, you have to copy parts of the code under test into a new class with the same name and package and you have to use classpath magic or a custom classloader to make sure it is visible first (so your copy is picked up). This pattern indicates an unhealthy amount of hidden dependencies which you can't control from a test. 
+  * <b>For Testers only:</b> Featurees or services that must run only in one type of environment, for example, emails were not to be sent on any other environment except live. If this standard is violated, it can degrade the quality of the application.
+  * <b>Friction:</b> Existing tests that make it difficult to write new tests.
+  * <b>Replicating Disadvantages of the Code:</b> If the utility functions themselves have further dependencies, or they compile, link or execute slowly, they bring all these disadvantages into the test code. 
+  * <b>Second Class Citizens:</b> Unhandled duplications in test code, making it hard to maintain tests.
+  * <b>The Forty Foot Pole Test:</b> ................XXXXXX...........XXXXXXX
 
 🔮 <b>Mock and stub related</b>
 
@@ -116,13 +116,13 @@
 
 * Other test logic related
   * <b>The Sleeper:</b> 
-  * <b>Lazy Test:</b> 
-  * <b>Conditional logic:</b> 
-  * <b>Happy Path:</b> 
-  * <b>The Inspector:</b> 
-  * <b>Wait and See:</b> 
+  * <b>Lazy Test:</b> Test method, which calls similar method of same class.
+  * <b>Conditional logic:</b> Test methods with conditional or loop statements
+  * <b>Happy Path:</b> The test stays on happy paths (i.e. expected results) without testing for boundaries and exceptions.
+  * <b>The Inspector:</b> A unit test that violates encapsulation in an effort to achieve 100% code coverage, but knows so much about what is going on in the object that any attempt to refactor will break the existing test and require any change to be reflected in the unit test.
+  * <b>Wait and See:</b>A test that runs some set up code and then needs to 'wait' a specific amount of time before it can 'see' if the code under test functioned as expected. A testMethod that uses Thread.sleep() or equivalent is most certainly a "Wait and See" test.
 * Testing many things
-  * <b>Assertion Roulette:</b> 
-  * <b>Multiple Responsabilities:</b> 
-  * <b>Tests of Different Behaviors:</b> 
-  * <b>The Test It All:</b> 
+  * <b>Assertion Roulette:</b> There are two many assertions happening in one method, though indirectly and it defeats the idea of one responsibility per test.
+  * <b>Multiple Responsabilities:</b> When a test case have more than a assertion. 
+  * <b>Tests of Different Behaviors:</b> It changes the control flow between testing and live behavior, meaning we're not necessarily testing the same code.
+  * <b>The Test It All:</b> Tests should not break the Single Responsibility Principle. Tests that break this rule are by definition a nightmare to maintain.
