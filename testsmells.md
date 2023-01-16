@@ -97,7 +97,7 @@
   * <b>Wet Floor:</b> The test creates data that is persisted somewhere, but the test does not clean up when finished. This causes tests (the same test, or possibly other tests) to fail on subsequent test runs. For example, a test left a file lying around in the "temp" dir, with permissions from the user that ran the test the first time.
 * Other test steps
   * <b>The Secret Catcher:</b> A test that at first glance appears to be doing no testing, due to absence of assertions. But the test is really relying on an exception to be thrown and expecting the testing framework to capture the exception and report it to the user as a failure.
-  * <b>Boilerplate:</b>Test code snippets that should be included in many places with little change.
+  * <b>Boilerplate:</b> Test code snippets that should be included in many places with little change.
   * <b>Brittle Unit Tests:</b> Software brittleness is the increased difficulty in fixing older software that may appear reliable, but fails badly when presented with unusual data or altered in a seemingly minor way.
   * <b>Fragile Unit Tests:</b> Tests that break easily, i.e. test cases that appear to be reliable, but when dealing with code changes or unusual data, often fail badly.
 
@@ -120,7 +120,7 @@
   * <b>Conditional logic:</b> Test methods with conditional or loop statements
   * <b>Happy Path:</b> The test stays on happy paths (i.e. expected results) without testing for boundaries and exceptions.
   * <b>The Inspector:</b> A unit test that violates encapsulation in an effort to achieve 100% code coverage, but knows so much about what is going on in the object that any attempt to refactor will break the existing test and require any change to be reflected in the unit test.
-  * <b>Wait and See:</b>A test that runs some set up code and then needs to 'wait' a specific amount of time before it can 'see' if the code under test functioned as expected. A testMethod that uses Thread.sleep() or equivalent is most certainly a "Wait and See" test.
+  * <b>Wait and See:</b> A test that runs some set up code and then needs to 'wait' a specific amount of time before it can 'see' if the code under test functioned as expected. A testMethod that uses Thread.sleep() or equivalent is most certainly a "Wait and See" test.
 * Testing many things
   * <b>Assertion Roulette:</b> There are two many assertions happening in one method, though indirectly and it defeats the idea of one responsibility per test.
   * <b>Multiple Responsabilities:</b> When a test case have more than a assertion. 
