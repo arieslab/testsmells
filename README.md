@@ -9,6 +9,8 @@
 
 <p align="justify">📋 <b>Abstract:</b> Refactorings are transformations to improve the design of the code without changing overall functionality and observable behavior. During the refactoring process of smelly test code, practitioners may struggle to identify refactoring candidates, define and apply the corrective strategy. However, little is known about challenges and real issues related to testing anti-patterns, the most used strategies discussed in the gray literature. This paper aims to understand how the topics of test smells and test refactorings are discussed among developers in online discussion forums. We explore how test smells are understood and perceived by developers, what corrective actions developers take to deal with them, and what challenges developers face when refactoring the test code to fix test smells. Our findings show that practitioners have more difficulty identifying whether or not a given practice is considered an anti-pattern of the test code than the appropriate strategies for fixing these practices.</p>  
 
+<p align="justify">📊 Data available at:  <a href="https://figshare.com/s/6c890a3b80690e12e90f">figshare</a></p>
+
 ![JAVA](https://img.shields.io/badge/java%20-%23323330.svg?&style=for-the-badge&logo=perfil&logoColor=black&color=F745B5)
 ![JUNIT](https://img.shields.io/badge/JUNIT%20-%23323330.svg?&style=for-the-badge&logo=perfil&logoColor=black&color=00add8)
 ![testsmell](https://img.shields.io/badge/testsmell%20-%23323330.svg?&style=for-the-badge&logo=perfil&logoColor=black&color=dc322f)
