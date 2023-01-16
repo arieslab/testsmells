@@ -6,17 +6,17 @@
 
 <img width="48%" src="refactorings.svg" align="center" alt=""/>
 
-🟣 <b>Good practices for preventing problems with roots on </b>
+<!-- 🟣 <b>Good practices for preventing problems with roots on </b>
 
 * Test steps
-  * <b>Use setup/teardown:</b> 🔴
+  * <b>Use setup/teardown:</b>
   * <b>Do not mix different types of test codes:</b> NEVER mix the test code with the UI Automation code.
   * <b>Do not put assertions in the setup method:</b> To use it, when I have some test errors in that class, I know that if testSetup() has an error, I don't need to bother with the other errors, I need to fix this one first.
   * <b>Organize the code following good practices:</b> There are several ways of organizing tests into classes. The most common patterns are Testcase Class per Class, Testcase Class per Feature and Testcase Class per Fixture.
-  * <b>Separate setup and assert methods:</b> ⚫
+  * <b>Separate setup and assert methods:</b>
 * Code-related
-  * <b>Follow naming conventions:</b> 🔴
-  * <b>Give meaningfull names:</b> 🔴
+  * <b>Follow naming conventions:</b>
+  * <b>Give meaningfull names:</b>
   * <b>Asserting strings instead of discrete values:</b>
   * <b>Fast, Focused Feedback:</b> Your tests should isolate the failure quickly and give you useful information as to its cause.
   * <b>Propositional Style Naming:</b> Propositional Style Naming, using a Most Recently Used List.
@@ -82,4 +82,4 @@
   * <b>Use explicit wait:</b> 
 * Test semantic / logic
   * <b>Decompose test logic:</b> What I might consider is decomposing the logic that generates the markup into smaller units, which you can test in more granular fashion.
-  * <b>Use guard asserts to multiple assertions:</b> I am not a fan of multiple asserts in a single test, but there are cases when a single "fact" can only be checked by multiple asserts and I can also think of a number of scenarios in which having some "guard" asserts before the actual "fact" being asserted can help in debugging failures.
+  * <b>Use guard asserts to multiple assertions:</b> I am not a fan of multiple asserts in a single test, but there are cases when a single "fact" can only be checked by multiple asserts and I can also think of a number of scenarios in which having some "guard" asserts before the actual "fact" being asserted can help in debugging failures.-->
