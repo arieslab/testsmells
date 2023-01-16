@@ -36,7 +36,7 @@
  <h2>Test code refactoring 🧹</h2>
 </p>
 
-<p> ➡ See <a href="testcodrefactoring.md" >definitions</a> of refactorings</p>
+<!--<p> ➡ See <a href="testcodrefactoring.md" >definitions</a> of refactorings</p>-->
 <img width="48%" src="refactorings.svg" align="center" alt=""/>
 
 <p align="center">
